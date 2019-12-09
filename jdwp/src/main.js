@@ -1,0 +1,24 @@
+
+import Vue from 'vue'
+import App from './App'
+import router from './router'
+import store from './store/store'
+
+import axios from 'axios'
+Vue.prototype.$axios = axios
+Vue.prototype.baseURL = process.env.API_ROOT;
+//使用时 
+// this.$axios({
+//   method:'get',
+//   url:`${this.baseURL}/getInfo`
+// })
+
+Vue.config.productionTip = false
+
+new Vue({
+  el: '#app',
+  router,
+  store,
+  components: { App },
+  template: '<App/>'
+})
